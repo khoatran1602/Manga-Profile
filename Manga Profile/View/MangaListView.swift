@@ -8,8 +8,21 @@
 import SwiftUI
 
 struct MangaListView: View {
+    @State var mangaList = [Datum]()
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        List(mangaList, id: \.id) { item in
+            VStack(alignment: .leading) {
+                Text(item.attributes.canonicalTitle)
+                    .font(.title)
+                    .fontWeight(.bold)
+            }
+        }
+        .onAppear() {
+            apiCall().getMangaList { (mangaList) in
+                self.mangaList = mangaList
+            }
+        }.navigationTitle("Manga List")
     }
 }
 

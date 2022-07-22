@@ -13,14 +13,19 @@ struct ContentView: View {
     let roundRect = RoundedRectangle(cornerRadius: 25.0)
     
     var body: some View {
-        TabView {
-            FirstView()
-            SecondView()
-            ThirdView()
+        NavigationView {
+            Color.blue
+                .ignoresSafeArea()
+                .overlay (
+                    TabView {
+                        FirstView()
+                        SecondView()
+                        ThirdView()
+                    })
+                .tabViewStyle(.page)
+                .background(.blue)
+                .edgesIgnoringSafeArea(.vertical)
         }
-        .tabViewStyle(.page)
-        .background(.blue)
-        .edgesIgnoringSafeArea(.vertical)
     }
 }
 
@@ -65,33 +70,25 @@ struct SecondView: View {
 }
 
 struct ThirdView: View {
-    @State var showingMangaList = false
-    
     var body: some View {
-        NavigationView {
-            Color.blue
-                .ignoresSafeArea()
-                .overlay(
-            VStack {
-                Image("LaunchScreen_3")
-                    .resizable()
-                    .padding()
-                    .scaledToFill()
-                    .frame(width: 200, height: 200, alignment: .center)
-                Spacer()
-                    .frame(height: 50)
-                Text("We hope that you can use our application to find what you are looking for")
-                    .font(.custom("Marker Felt", size: 18))
-                    .fontWeight(.semibold)
-                    .foregroundColor(Color.red)
-                    .padding()
-                    .multilineTextAlignment(.center)
-                NavigationLink(destination: MangaListView()) {
-                    Text("Let's explore!")
-                        .foregroundColor(.white)
-                }
-                .
-            })
+        VStack {
+            Image("LaunchScreen_3")
+                .resizable()
+                .padding()
+                .scaledToFill()
+                .frame(width: 200, height: 200, alignment: .center)
+            Spacer()
+                .frame(height: 50)
+            Text("We hope that you can use our application to find what you are looking for")
+                .font(.custom("Marker Felt", size: 18))
+                .fontWeight(.semibold)
+                .foregroundColor(Color.red)
+                .padding()
+                .multilineTextAlignment(.center)
+            NavigationLink(destination: MangaListView()) {
+                Text("Let's explore!")
+                    .foregroundColor(.white)
+            }
         }
     }
 }
