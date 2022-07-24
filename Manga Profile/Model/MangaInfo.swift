@@ -1,5 +1,6 @@
 import Foundation
 
+
 // MARK: - Welcome
 struct Welcome: Codable {
     var data: [Datum]
@@ -11,12 +12,13 @@ struct Welcome: Codable {
 struct Datum: Codable {
     var id: String
     var attributes: Attributes
+    var isFavorite: Bool?
 }
 
 // MARK: - Attributes
 struct Attributes: Codable {
     let createdAt: String
-    let updatedAt: UpdatedAt
+    //let updatedAt: UpdatedAt
     let slug, synopsis, attributesDescription: String
     let coverImageTopOffset: Int
     let titles: Titles
@@ -41,7 +43,7 @@ struct Attributes: Codable {
     let mangaType: TypeEnum
 
     enum CodingKeys: String, CodingKey {
-        case createdAt, updatedAt, slug, synopsis
+        case createdAt, slug, synopsis
         case attributesDescription = "description"
         case coverImageTopOffset, titles, canonicalTitle, abbreviatedTitles, averageRating, ratingFrequencies, userCount, favoritesCount, startDate, endDate, nextRelease, popularityRank, ratingRank, ageRating, ageRatingGuide, subtype, status, tba, posterImage, coverImage, chapterCount, volumeCount, serialization, mangaType
     }
@@ -127,10 +129,10 @@ struct Titles: Codable {
     }
 }
 
-enum UpdatedAt: String, Codable {
-    case the20220722T060011223Z = "2022-07-22T06:00:11.223Z"
-    case the20220722T060837478Z = "2022-07-22T06:08:37.478Z"
-}
+//enum UpdatedAt: String, Codable {
+//    case the20220722T060011223Z = "2022-07-22T06:00:11.223Z"
+//    case the20220722T060837478Z = "2022-07-22T06:08:37.478Z"
+//}
 
 // MARK: - DatumLinks
 struct DatumLinks: Codable {
