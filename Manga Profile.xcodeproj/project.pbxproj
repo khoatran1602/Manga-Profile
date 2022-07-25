@@ -28,6 +28,7 @@
 		2D93F7B12888051D007BF7BD /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		2D93F7B828880BEA007BF7BD /* MangaListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MangaListView.swift; sourceTree = "<group>"; };
 		2D93F7BA288811CE007BF7BD /* MangaInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MangaInfo.swift; sourceTree = "<group>"; };
+		2DA635E7288EC8A2003E19C4 /* Manga-Profile-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Manga-Profile-Info.plist"; sourceTree = SOURCE_ROOT; };
 		2DDA6AD6288D4B02007D6B0F /* Favorite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Favorite.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -61,6 +62,7 @@
 		2D93F7A92888051C007BF7BD /* Manga Profile */ = {
 			isa = PBXGroup;
 			children = (
+				2DA635E7288EC8A2003E19C4 /* Manga-Profile-Info.plist */,
 				2D93F7BD288811DF007BF7BD /* Model */,
 				2D93F7BC288811DB007BF7BD /* View */,
 				2D93F7AA2888051C007BF7BD /* Manga_ProfileApp.swift */,
@@ -307,6 +309,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"Manga Profile/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Manga-Profile-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -335,6 +338,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"Manga Profile/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Manga-Profile-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

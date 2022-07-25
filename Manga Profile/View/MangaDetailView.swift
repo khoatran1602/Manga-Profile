@@ -11,6 +11,7 @@ import CoreLocation
 struct MangaDetailView: View {
     var locationCoordinate = CLLocationCoordinate2D(latitude: 35.652832, longitude: 139.839478)
     @State var mangaList = [Datum]()
+    @State var mangaId: String
     @State var imageURL: String
     @State var mangaName: String
     @State var mangaJapanName: String
@@ -54,11 +55,11 @@ struct MangaDetailView: View {
                     Spacer()
                         .frame(height: 20)
                     Text(mangaDetail)
-                    Button(self.favorites.contains(mangaList) ? "Remove From Favorite" : "Add To Favorite") {
-                        if self.favorites.contains(mangaList) {
-                            self.favorites.remove(mangaList)
+                    Button(favorites.contains(mangaId) ? "Remove From Favorite" : "Add To Favorite") {
+                        if favorites.contains(mangaId) {
+                            favorites.remove(mangaId)
                         } else {
-                            self.favorites.add(mangaList)
+                            favorites.add(mangaId)
                         }
                     }
                     .buttonStyle(.borderedProminent)
@@ -68,17 +69,18 @@ struct MangaDetailView: View {
             }
             .navigationTitle("Manga Information")
             .navigationBarTitleDisplayMode(.inline)
-            .environmentObject(self.favorites)
         }
     }
 }
 
 struct MangaDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        MangaDetailView(imageURL: "LaunchScreen_1",
+        MangaDetailView(mangaId: "01",
+                        imageURL: "LaunchScreen_1",
                         mangaName: "Naruto Shippuden",
                         mangaJapanName: "ナルト",
                         mangaDetail: "About a child...",
                         manageRating: "10.0")
+            .environmentObject(Favorites())
     }
 }

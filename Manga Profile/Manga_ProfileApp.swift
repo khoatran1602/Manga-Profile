@@ -9,9 +9,12 @@ import SwiftUI
 
 @main
 struct Manga_ProfileApp: App {
+    @StateObject var favorites = Favorites()
+    
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(favorites)
         }
     }
 }

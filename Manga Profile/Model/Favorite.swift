@@ -8,50 +8,30 @@
 import Foundation
 
 class Favorites: ObservableObject {
-    var mangaList = [Datum]()
-
-    // the actual resorts the user has favorited
+    
     private var mangaFavoriteList: Set<String>
-
-    // the key we're using to read/write in UserDefaults
-    private let saveKey = "Favorites"
+    private var saveKey = "Favorites"
 
     init() {
-        // load our saved data
-
-        // still here? Use an empty array
         mangaFavoriteList = []
     }
 
-    // returns true if our set contains this resort
-    func contains(_ list: [Datum]) -> Bool {
-        for item in list {
-            if (mangaFavoriteList.contains(item.id)) {
-                return true
-            }
-        }
-        return false
+    func contains(_ list: String) -> Bool {
+        mangaFavoriteList.contains(list)
     }
 
-    // adds the resort to our set, updates all views, and saves the change
-    func add(_ list: [Datum]) {
+    func add(_ list: String) {
         objectWillChange.send()
-        for item in list {
-            mangaFavoriteList.insert(item.id)
-        }
+        mangaFavoriteList.insert(list)
         save()
     }
 
-    // removes the resort from our set, updates all views, and saves the change
-    func remove(_ list: [Datum]) {
+    func remove(_ list: String) {
         objectWillChange.send()
-        for item in list {
-            mangaFavoriteList.remove(item.id)
-        }
+        mangaFavoriteList.remove(list)
         save()
     }
 
     func save() {
-        // write out our data
     }
 }
