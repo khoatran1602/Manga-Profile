@@ -2,11 +2,11 @@
   RMIT University Vietnam
   Course: COSC2659 iOS Development
   Semester: 2022B
-  Assessment: Assignment 2
-  Author: Your name (e.g. Nguyen Van Minh)
-  ID: Your student id (e.g. 1234567)
-  Created  date: dd/mm/yyyy (e.g. 31/07/2022)
-  Last modified: dd/mm/yyyy (e.g. 05/08/2022)
+  Assessment: Assignment 1
+  Author: Tran Dang Khoa
+  ID: 3847766
+  Created  date: 07/11/2022
+  Last modified: 08/07/2022
   Acknowledgement: Acknowledge the resources that you use here.
 */
 
@@ -210,16 +210,20 @@ class JSONNull: Codable, Hashable {
 let url = URL(string: "https://kitsu.io/api/edge/manga")!
 var request = URLRequest(url: url)
 
+//Get Manga List from API
 class apiCall {
     func getMangaList(completion:@escaping ([Datum]) -> ()) {
         guard URL(string: "https://kitsu.io/api/edge/manga") != nil else { return }
         
         URLSession.shared.dataTask(with: request) { data, response, error in
+            //Check if response is nil or not. If nil, print error
             if let response = response {
                 print(response)
                 if let data = data, let body = String(data: data, encoding: .utf8) {
+                    //Decode json to take the manga's name
                     let attributes = try! JSONDecoder().decode(Welcome.self, from: data)
                     let name = attributes.data
+                    //Run on background
                     DispatchQueue.main.async {
                         completion(name)
                     }
