@@ -1,14 +1,14 @@
 /*
-  RMIT University Vietnam
-  Course: COSC2659 iOS Development
-  Semester: 2022B
-  Assessment: Assignment 1
-  Author: Tran Dang Khoa
-  ID: 3847766
-  Created  date: 07/11/2022
-  Last modified: 08/07/2022
-  Acknowledgement: Acknowledge the resources that you use here.
-*/
+ RMIT University Vietnam
+ Course: COSC2659 iOS Development
+ Semester: 2022B
+ Assessment: Assignment 1
+ Author: Tran Dang Khoa
+ ID: 3847766
+ Created  date: 07/11/2022
+ Last modified: 08/07/2022
+ Acknowledgement: Acknowledge the resources that you use here.
+ */
 
 import Foundation
 
@@ -53,7 +53,7 @@ struct Attributes: Codable {
     let volumeCount: Int
     let serialization: String?
     let mangaType: TypeEnum
-
+    
     enum CodingKeys: String, CodingKey {
         case createdAt, slug, synopsis
         case attributesDescription = "description"
@@ -67,7 +67,7 @@ struct CoverImage: Codable {
     let tinyWebp, largeWebp, smallWebp: String
     let original: String
     let meta: CoverImageMeta
-
+    
     enum CodingKeys: String, CodingKey {
         case tiny, large, small
         case tinyWebp = "tiny_webp"
@@ -86,7 +86,7 @@ struct CoverImageMeta: Codable {
 struct PurpleDimensions: Codable {
     let tiny, large, small, tinyWebp: Large
     let largeWebp, smallWebp: Large
-
+    
     enum CodingKeys: String, CodingKey {
         case tiny, large, small
         case tinyWebp = "tiny_webp"
@@ -132,7 +132,7 @@ struct Titles: Codable {
     let en: String?
     let enJp: String
     let enUs, jaJp: String?
-
+    
     enum CodingKeys: String, CodingKey {
         case en
         case enJp = "en_jp"
@@ -149,7 +149,7 @@ struct Titles: Codable {
 // MARK: - DatumLinks
 struct DatumLinks: Codable {
     let linksSelf: String
-
+    
     enum CodingKeys: String, CodingKey {
         case linksSelf = "self"
     }
@@ -163,7 +163,7 @@ struct Relationship: Codable {
 // MARK: - RelationshipLinks
 struct RelationshipLinks: Codable {
     let linksSelf, related: String
-
+    
     enum CodingKeys: String, CodingKey {
         case linksSelf = "self"
         case related
@@ -183,24 +183,24 @@ struct WelcomeMeta: Codable {
 // MARK: - Encode/decode helpers
 
 class JSONNull: Codable, Hashable {
-
+    
     public static func == (lhs: JSONNull, rhs: JSONNull) -> Bool {
         return true
     }
-
+    
     func hash(into hasher: inout Hasher) {
         hasher.combine(ObjectIdentifier(self))
     }
-
+    
     public init() {}
-
+    
     public required init(from decoder: Decoder) throws {
         let container = try decoder.singleValueContainer()
         if !container.decodeNil() {
             throw DecodingError.typeMismatch(JSONNull.self, DecodingError.Context(codingPath: decoder.codingPath, debugDescription: "Wrong type for JSONNull"))
         }
     }
-
+    
     public func encode(to encoder: Encoder) throws {
         var container = encoder.singleValueContainer()
         try container.encodeNil()

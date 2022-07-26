@@ -1,14 +1,14 @@
 /*
-  RMIT University Vietnam
-  Course: COSC2659 iOS Development
-  Semester: 2022B
-  Assessment: Assignment 1
-  Author: Tran Dang Khoa
-  ID: 3847766
-  Created  date: 07/11/2022
-  Last modified: 08/07/2022
-  Acknowledgement: Acknowledge the resources that you use here.
-*/
+ RMIT University Vietnam
+ Course: COSC2659 iOS Development
+ Semester: 2022B
+ Assessment: Assignment 1
+ Author: Tran Dang Khoa
+ ID: 3847766
+ Created  date: 07/11/2022
+ Last modified: 08/07/2022
+ Acknowledgement: Acknowledge the resources that you use here.
+ */
 
 
 import SwiftUI
@@ -18,10 +18,10 @@ struct MapView: View {
     var coordinate: CLLocationCoordinate2D
     
     @State private var region = MKCoordinateRegion(
-            center: CLLocationCoordinate2D(latitude: 35.652832, longitude: 139.839478),
-            span: MKCoordinateSpan(latitudeDelta: 0.2, longitudeDelta: 0.2)
+        center: CLLocationCoordinate2D(latitude: 35.652832, longitude: 139.839478),
+        span: MKCoordinateSpan(latitudeDelta: 0.2, longitudeDelta: 0.2)
     )
-
+    
     var body: some View {
         Map(coordinateRegion: $region)
     }

@@ -1,14 +1,14 @@
 /*
-  RMIT University Vietnam
-  Course: COSC2659 iOS Development
-  Semester: 2022B
-  Assessment: Assignment 1
-  Author: Tran Dang Khoa
-  ID: 3847766
-  Created  date: 07/11/2022
-  Last modified: 08/07/2022
-  Acknowledgement: Acknowledge the resources that you use here.
-*/
+ RMIT University Vietnam
+ Course: COSC2659 iOS Development
+ Semester: 2022B
+ Assessment: Assignment 1
+ Author: Tran Dang Khoa
+ ID: 3847766
+ Created  date: 07/11/2022
+ Last modified: 08/07/2022
+ Acknowledgement: Acknowledge the resources that you use here.
+ */
 
 import SwiftUI
 
@@ -17,8 +17,8 @@ struct MangaListView: View {
     //Declare variables
     @State var mangaList = [Datum]()
     @State private var showFavoritesOnly = false
-    //@StateObject var favorites = Favorites()
     @State var isFavorite: Bool = false
+    //Favorite will scan this view and get this data if something changes
     @EnvironmentObject var favorites: Favorites
     @State var mangaFavoriteList = [Datum]()
     
@@ -26,6 +26,7 @@ struct MangaListView: View {
     func getList() -> [Datum] {
         if (showFavoritesOnly) {
             for item in mangaList {
+                //Check if manga is already in mangaFavoriteList and mangaFavoriteList does not create the same manga
                 if (favorites.contains(item.id) && !mangaFavoriteList.contains(where: {$0.id == item.id})) {
                     mangaFavoriteList.append(item)
                 }
@@ -102,7 +103,7 @@ struct MangaListView: View {
             //Name that appears on top of this view
             .navigationTitle("Manga List")
         }
-        //
+        //Connect MangaListView with Favorite
         .environmentObject(favorites)
     }
 }

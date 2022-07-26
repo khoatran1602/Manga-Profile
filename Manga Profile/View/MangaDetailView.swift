@@ -1,14 +1,14 @@
 /*
-  RMIT University Vietnam
-  Course: COSC2659 iOS Development
-  Semester: 2022B
-  Assessment: Assignment 1
-  Author: Tran Dang Khoa
-  ID: 3847766
-  Created  date: 07/11/2022
-  Last modified: 08/07/2022
-  Acknowledgement: Acknowledge the resources that you use here.
-*/
+ RMIT University Vietnam
+ Course: COSC2659 iOS Development
+ Semester: 2022B
+ Assessment: Assignment 1
+ Author: Tran Dang Khoa
+ ID: 3847766
+ Created  date: 07/11/2022
+ Last modified: 08/07/2022
+ Acknowledgement: Acknowledge the resources that you use here.
+ */
 
 
 import SwiftUI
@@ -25,6 +25,7 @@ struct MangaDetailView: View {
     @State var mangaJapanName: String
     @State var mangaDetail: String
     @State var manageRating: String
+    //Favorite will scan this view and get this data if something changes
     @EnvironmentObject var favorites: Favorites
     
     var body: some View {
@@ -56,15 +57,18 @@ struct MangaDetailView: View {
                     }
                     .font(.subheadline)
                     .foregroundColor(.secondary)
-                    
+                    //A straight line
                     Divider()
                     
                     Spacer()
                         .frame(height: 20)
+                    
                     Text("About \(mangaJapanName)")
                         .font(.title2)
+                    
                     Spacer()
                         .frame(height: 20)
+                    
                     Text(mangaDetail)
                     Button(favorites.contains(mangaId) ? "Remove From Favorite" : "Add To Favorite") {
                         if favorites.contains(mangaId) {
@@ -92,6 +96,7 @@ struct MangaDetailView_Previews: PreviewProvider {
                         mangaJapanName: "ナルト",
                         mangaDetail: "About a child...",
                         manageRating: "10.0")
+        //Connect MangaDetailView with Favorite
             .environmentObject(Favorites())
     }
 }
