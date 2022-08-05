@@ -219,11 +219,11 @@ class apiCall {
             //Check if response is nil or not. If nil, print error
             if let response = response {
                 print(response)
-                if let data = data, let body = String(data: data, encoding: .utf8) {
+                if let data = data, let _ = String(data: data, encoding: .utf8) {
                     //Decode json to take the manga's name
                     let attributes = try! JSONDecoder().decode(Welcome.self, from: data)
                     let name = attributes.data
-                    //Run on background
+                    //Update the list property in the main thread
                     DispatchQueue.main.async {
                         completion(name)
                     }

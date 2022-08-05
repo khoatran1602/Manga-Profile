@@ -63,7 +63,7 @@ struct MangaListView: View {
                                                             mangaJapanName: item.attributes.titles.enJp,
                                                             mangaDetail: item.attributes.synopsis,
                                                             manageRating: item.attributes.averageRating ?? "No Rated Yet")) {
-                                Text(item.attributes.canonicalTitle)
+                                Text(item.attributes.canonicalTitle) 
                                     .font(.body)
                                     .fontWeight(.bold)
                                     .padding(.top)

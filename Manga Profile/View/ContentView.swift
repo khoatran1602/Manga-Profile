@@ -40,8 +40,9 @@ struct FirstView: View {
             Image("LaunchScreen_1")
                 .resizable()
                 .padding()
-                .scaledToFit()
-                .frame(width: 200, height: 200, alignment: .center)
+                .aspectRatio(contentMode: .fill)
+                .frame(width: UIScreen.screenSize.width / 1.5,
+                       height: UIScreen.screenSize.height / 2)
             Spacer()
                 .frame(height: 50)
             Text("Welcome to Manga Profile!")
@@ -60,8 +61,10 @@ struct SecondView: View {
             Image("LaunchScreen_2")
                 .resizable()
                 .padding()
+                .aspectRatio(contentMode: .fit)
+                .frame(width: UIScreen.screenSize.width,
+                       height: UIScreen.screenSize.height / 2)
                 .scaledToFill()
-                .frame(width: 200, height: 200, alignment: .center)
             Spacer()
                 .frame(height: 50)
             Text("Where you can find your favorire manga and its information")
@@ -77,13 +80,25 @@ struct SecondView: View {
 struct ThirdView: View {
     var body: some View {
         VStack {
+            Text("Some of the features:\n" +
+                 "- Mark Favorite\n" +
+                 "- Read Manga's Detail Information\n" +
+                 "- Show Favorite Only")
+                .font(.custom("Marker Felt", size: 12))
+                .fontWeight(.semibold)
+                .foregroundColor(Color.red)
+                .padding()
+                .multilineTextAlignment(.center)
+            Spacer()
+                .frame(height: 20)
             Image("LaunchScreen_3")
                 .resizable()
                 .padding()
-                .scaledToFill()
-                .frame(width: 200, height: 200, alignment: .center)
+                .aspectRatio(contentMode: .fit)
+                .frame(width: UIScreen.screenSize.width * 5,
+                       height: UIScreen.screenSize.height / 2)
             Spacer()
-                .frame(height: 50)
+                .frame(height: 30)
             Text("We hope that you can use our application to find what you are looking for")
                 .font(.custom("Marker Felt", size: 18))
                 .fontWeight(.semibold)
@@ -105,7 +120,5 @@ struct ContentView_Previews: PreviewProvider {
 }
 
 extension UIScreen{
-    static let screenWidth = UIScreen.main.bounds.size.width
-    static let screenHeight = UIScreen.main.bounds.size.height
-    static let screenSize = UIScreen.main.bounds.size
+    static let screenSize = UIScreen.main.bounds
 }
