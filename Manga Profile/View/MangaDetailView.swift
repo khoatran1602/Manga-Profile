@@ -41,7 +41,7 @@ struct MangaDetailView: View {
                 AsyncImage(url: URL(string: imageURL))
                     .clipShape(Circle())
                     .overlay(Circle()
-                                .stroke(Color(.white),lineWidth: 4)
+                        .stroke(Color(.white),lineWidth: 4)
                     )
                     .shadow(radius: 7)
                     .offset(y: -130)
@@ -97,6 +97,6 @@ struct MangaDetailView_Previews: PreviewProvider {
                         mangaDetail: "About a child...",
                         manageRating: "10.0")
         //Connect MangaDetailView with Favorite
-            .environmentObject(Favorites())
+        .environmentObject(Favorites())
     }
 }

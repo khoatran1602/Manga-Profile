@@ -141,11 +141,6 @@ struct Titles: Codable {
     }
 }
 
-//enum UpdatedAt: String, Codable {
-//    case the20220722T060011223Z = "2022-07-22T06:00:11.223Z"
-//    case the20220722T060837478Z = "2022-07-22T06:08:37.478Z"
-//}
-
 // MARK: - DatumLinks
 struct DatumLinks: Codable {
     let linksSelf: String
