@@ -15,42 +15,46 @@ import SwiftUI
 
 struct ContentView: View {
     
-    let roundRect = RoundedRectangle(cornerRadius: 25.0)
-    
     var body: some View {
         NavigationView {
-            Color.blue
-                .ignoresSafeArea()
-                .overlay (
-                    TabView {
-                        FirstView()
-                        SecondView()
-                        ThirdView()
-                    })
-                .tabViewStyle(.page)
-                .background(.blue)
-                .edgesIgnoringSafeArea(.vertical)
+            
+            TabView {
+                FirstView()
+                SecondView()
+                ThirdView()
+            }
+            .tabViewStyle(.page)
+            .background(.black)
+            .edgesIgnoringSafeArea(.vertical)
         }
+        .preferredColorScheme(.dark)
     }
 }
 
 struct FirstView: View {
+    
     var body: some View {
         VStack {
-            Image("LaunchScreen_1")
-                .resizable()
-                .padding()
-                .aspectRatio(contentMode: .fill)
-                .frame(width: UIScreen.screenSize.width / 1.5,
-                       height: UIScreen.screenSize.height / 2)
+            Text("Welcome to Manga Profile!")
+                .font(.title)
+                .italic()
+                .fontWeight(.semibold)
+                .foregroundColor(randomColor())
+                .multilineTextAlignment(.center)
             Spacer()
                 .frame(height: 50)
-            Text("Welcome to Manga Profile!")
-                .font(.custom("Marker Felt", size: 18))
+            Text("Where you can find your favorire manga and its information")
+                .font(.body)
                 .fontWeight(.semibold)
-                .foregroundColor(Color.red)
-                .padding()
+                .foregroundColor(randomColor())
                 .multilineTextAlignment(.center)
+            //Displaying welcome gif
+            GifImageView("welcome")
+            GifImageView("welcome_1")
+            GifImageView("welcome_2")
+            //Make little gap among gifs
+            Spacer()
+                .frame(height: 50)
         }
     }
 }
@@ -60,55 +64,49 @@ struct SecondView: View {
         VStack {
             Image("LaunchScreen_2")
                 .resizable()
-                .padding()
-                .aspectRatio(contentMode: .fit)
-                .frame(width: UIScreen.screenSize.width,
+                .aspectRatio(contentMode: .fill)
+                .frame(width: UIScreen.screenSize.width * 3,
                        height: UIScreen.screenSize.height / 2)
                 .scaledToFill()
-            Spacer()
-                .frame(height: 50)
-            Text("Where you can find your favorire manga and its information")
-                .font(.custom("Marker Felt", size: 18))
-                .fontWeight(.semibold)
-                .foregroundColor(Color.red)
-                .padding()
-                .multilineTextAlignment(.center)
         }
     }
 }
 
 struct ThirdView: View {
+    
     var body: some View {
         VStack {
             Text("Some of the features:\n" +
                  "- Mark Favorite\n" +
                  "- Read Manga's Detail Information\n" +
                  "- Show Favorite Only")
-                .font(.custom("Marker Felt", size: 12))
-                .fontWeight(.semibold)
-                .foregroundColor(Color.red)
-                .padding()
-                .multilineTextAlignment(.center)
+            .font(.custom("Marker Felt", size: 20))
+            .fontWeight(.semibold)
+            .hoverEffect(.lift)
+            .foregroundColor(randomColor())
+            .multilineTextAlignment(.center)
             Spacer()
                 .frame(height: 20)
-            Image("LaunchScreen_3")
-                .resizable()
-                .padding()
-                .aspectRatio(contentMode: .fit)
-                .frame(width: UIScreen.screenSize.width * 5,
-                       height: UIScreen.screenSize.height / 2)
+            GifImageView("welcome_3")
+            GifImageView("welcome_4")
             Spacer()
                 .frame(height: 30)
             Text("We hope that you can use our application to find what you are looking for")
-                .font(.custom("Marker Felt", size: 18))
+                .font(.custom("OpenSans-Bold", size: 18))
                 .fontWeight(.semibold)
-                .foregroundColor(Color.red)
+                .foregroundColor(randomColor())
                 .padding()
                 .multilineTextAlignment(.center)
             NavigationLink(destination: MangaListView()) {
                 Text("Let's explore!")
-                    .foregroundColor(.white)
+                    .italic()
+                    .fontWeight(.bold)
+                    .foregroundColor(randomColor())
+                    .hoverEffect(.lift)
+                
             }
+            Spacer()
+                .frame(height: 50)
         }
     }
 }
@@ -122,3 +120,4 @@ struct ContentView_Previews: PreviewProvider {
 extension UIScreen{
     static let screenSize = UIScreen.main.bounds
 }
+

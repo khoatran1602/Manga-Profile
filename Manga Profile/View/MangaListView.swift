@@ -67,7 +67,7 @@ struct MangaListView: View {
                                     .font(.body)
                                     .fontWeight(.bold)
                                     .padding(.top)
-                                    .foregroundColor(.blue)
+                                    .foregroundColor(randomColor())
                             }
                             
                             //Yellow star to mark users' favorite manga
