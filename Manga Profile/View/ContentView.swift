@@ -102,8 +102,6 @@ struct ThirdView: View {
                     .italic()
                     .fontWeight(.bold)
                     .foregroundColor(randomColor())
-                    .hoverEffect(.lift)
-                
             }
             Spacer()
                 .frame(height: 50)

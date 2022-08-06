@@ -17,7 +17,9 @@ import CoreLocation
 struct MangaDetailView: View {
     
     //Declare variables
+    //Static Coordinate
     var locationCoordinate = CLLocationCoordinate2D(latitude: 35.652832, longitude: 139.839478)
+    //Receiving parameters from MangaListVIew
     @State var mangaList = [Datum]()
     @State var mangaId: String
     @State var imageURL: String
@@ -70,6 +72,7 @@ struct MangaDetailView: View {
                         .frame(height: 20)
                     
                     Text(mangaDetail)
+                    //Add Favorite Button Or Remove
                     Button(favorites.contains(mangaId) ? "Remove From Favorite" : "Add To Favorite") {
                         if favorites.contains(mangaId) {
                             favorites.remove(mangaId)

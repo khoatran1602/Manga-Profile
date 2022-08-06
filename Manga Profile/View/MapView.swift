@@ -15,14 +15,17 @@ import SwiftUI
 import MapKit
 
 struct MapView: View {
+    //Declare variable
     var coordinate: CLLocationCoordinate2D
     
+    //Region Coordinate
     @State private var region = MKCoordinateRegion(
         center: CLLocationCoordinate2D(latitude: 35.652832, longitude: 139.839478),
         span: MKCoordinateSpan(latitudeDelta: 0.2, longitudeDelta: 0.2)
     )
     
     var body: some View {
+        //Display the coordinate
         Map(coordinateRegion: $region)
     }
 }

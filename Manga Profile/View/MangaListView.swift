@@ -25,6 +25,7 @@ struct MangaListView: View {
     //Get users' favorite manga list and return it
     func getList() -> [Datum] {
         if (showFavoritesOnly) {
+            mangaFavoriteList.removeAll()
             for item in mangaList {
                 //Check if manga is already in mangaFavoriteList and mangaFavoriteList does not create the same manga
                 if (favorites.contains(item.id) && !mangaFavoriteList.contains(where: {$0.id == item.id})) {
@@ -63,7 +64,7 @@ struct MangaListView: View {
                                                             mangaJapanName: item.attributes.titles.enJp,
                                                             mangaDetail: item.attributes.synopsis,
                                                             manageRating: item.attributes.averageRating ?? "No Rated Yet")) {
-                                Text(item.attributes.canonicalTitle) 
+                                Text(item.attributes.canonicalTitle)
                                     .font(.body)
                                     .fontWeight(.bold)
                                     .padding(.top)
