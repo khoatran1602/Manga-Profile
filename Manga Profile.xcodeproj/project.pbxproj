@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2D2E0379289F960E00A43119 /* document.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 2D2E0378289F960E00A43119 /* document.pdf */; };
 		2D5C41F5289E713A003AA419 /* GifImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5C41F4289E713A003AA419 /* GifImageView.swift */; };
 		2D5C41FA289E767D003AA419 /* welcome.gif in Resources */ = {isa = PBXBuildFile; fileRef = 2D5C41F9289E767D003AA419 /* welcome.gif */; };
 		2D5C41FC289E76E7003AA419 /* welcome_1.gif in Resources */ = {isa = PBXBuildFile; fileRef = 2D5C41FB289E76E7003AA419 /* welcome_1.gif */; };
@@ -14,7 +15,6 @@
 		2D5C4200289E78B0003AA419 /* welcome_3.gif in Resources */ = {isa = PBXBuildFile; fileRef = 2D5C41FF289E78B0003AA419 /* welcome_3.gif */; };
 		2D5C4202289E798A003AA419 /* welcome_4.gif in Resources */ = {isa = PBXBuildFile; fileRef = 2D5C4201289E798A003AA419 /* welcome_4.gif */; };
 		2D5C4204289E86B6003AA419 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5C4203289E86B6003AA419 /* Extensions.swift */; };
-		2D5C4206289E8953003AA419 /* document.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 2D5C4205289E8953003AA419 /* document.pdf */; };
 		2D8DE9FE288C04CD0024FBFD /* MangaDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D8DE9FD288C04CD0024FBFD /* MangaDetailView.swift */; };
 		2D8DEA00288C05320024FBFD /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D8DE9FF288C05320024FBFD /* MapView.swift */; };
 		2D93F7AB2888051C007BF7BD /* Manga_ProfileApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D93F7AA2888051C007BF7BD /* Manga_ProfileApp.swift */; };
@@ -27,6 +27,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2D2E0378289F960E00A43119 /* document.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = document.pdf; sourceTree = "<group>"; };
 		2D5C41F4289E713A003AA419 /* GifImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GifImageView.swift; sourceTree = "<group>"; };
 		2D5C41F9289E767D003AA419 /* welcome.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = welcome.gif; sourceTree = "<group>"; };
 		2D5C41FB289E76E7003AA419 /* welcome_1.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = welcome_1.gif; sourceTree = "<group>"; };
@@ -34,7 +35,6 @@
 		2D5C41FF289E78B0003AA419 /* welcome_3.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = welcome_3.gif; sourceTree = "<group>"; };
 		2D5C4201289E798A003AA419 /* welcome_4.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = welcome_4.gif; sourceTree = "<group>"; };
 		2D5C4203289E86B6003AA419 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
-		2D5C4205289E8953003AA419 /* document.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = document.pdf; sourceTree = "<group>"; };
 		2D8DE9FD288C04CD0024FBFD /* MangaDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MangaDetailView.swift; sourceTree = "<group>"; };
 		2D8DE9FF288C05320024FBFD /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		2D93F7A72888051C007BF7BD /* Manga Profile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Manga Profile.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -90,9 +90,9 @@
 		2D93F7A92888051C007BF7BD /* Manga Profile */ = {
 			isa = PBXGroup;
 			children = (
-				2D5C4205289E8953003AA419 /* document.pdf */,
-				2D5C41F8289E74C4003AA419 /* Image */,
+				2D2E0378289F960E00A43119 /* document.pdf */,
 				2DA635E7288EC8A2003E19C4 /* Manga-Profile-Info.plist */,
+				2D5C41F8289E74C4003AA419 /* Image */,
 				2D93F7BD288811DF007BF7BD /* Model */,
 				2D93F7BC288811DB007BF7BD /* View */,
 				2D93F7AA2888051C007BF7BD /* Manga_ProfileApp.swift */,
@@ -193,7 +193,7 @@
 				2D5C4202289E798A003AA419 /* welcome_4.gif in Resources */,
 				2D5C4200289E78B0003AA419 /* welcome_3.gif in Resources */,
 				2D93F7B22888051D007BF7BD /* Preview Assets.xcassets in Resources */,
-				2D5C4206289E8953003AA419 /* document.pdf in Resources */,
+				2D2E0379289F960E00A43119 /* document.pdf in Resources */,
 				2D5C41FE289E7816003AA419 /* welcome_2.gif in Resources */,
 				2D93F7AF2888051D007BF7BD /* Assets.xcassets in Resources */,
 				2D5C41FA289E767D003AA419 /* welcome.gif in Resources */,
